@@ -1,7 +1,5 @@
 package com.dianping.cat.report.page.web.graph;
 
-import org.hsqldb.lib.StringUtil;
-
 import com.dianping.cat.Cat;
 import com.dianping.cat.Monitor;
 import com.dianping.cat.consumer.metric.model.entity.MetricItem;
@@ -45,7 +43,7 @@ public class WebReportConvertor extends BaseVisitor {
 				return;
 			}
 			int index = city.indexOf('-');
-			if (StringUtil.isEmpty(m_city)) {
+			if (StringUtils.isEmpty(m_city)) {
 				StatisticsItem tem = m_report.findOrCreateStatistic(Monitor.CITY + key).findOrCreateStatisticsItem(
 				      city.substring(0, index));
 
@@ -56,7 +54,7 @@ public class WebReportConvertor extends BaseVisitor {
 
 				tem.setCount(tem.getCount() + total);
 			}
-			if (StringUtil.isEmpty(m_channel)) {
+			if (StringUtils.isEmpty(m_channel)) {
 				StatisticsItem tem = m_report.findOrCreateStatistic(Monitor.CHANNEL + key).findOrCreateStatisticsItem(
 				      channel);
 

@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.hsqldb.lib.StringUtil;
+import org.apache.commons.lang.StringUtils;
 import org.unidal.web.mvc.ViewModel;
 
 import com.dianping.cat.consumer.metric.config.entity.MetricItemConfig;
@@ -259,7 +259,7 @@ public class Model extends ViewModel<SystemPage, Action, Context> {
 
 		for (Command command : m_commands) {
 			String domain = command.getDomain();
-			if (StringUtil.isEmpty(domain)) {
+			if (StringUtils.isEmpty(domain)) {
 				domain = "default";
 			}
 			List<Command> commands = map.get(domain);

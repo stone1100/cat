@@ -6,45 +6,47 @@ import com.dianping.cat.report.ReportPage;
 import com.dianping.cat.system.SystemPage;
 
 public class NavigationBar {
-	public Page[] getSystemPages() {
-		return new Page[] {
+    public Page[] getSystemPages() {
+        return new Page[]{
 
-		SystemPage.ALARM,
+                SystemPage.ALARM,
 
-		SystemPage.CONFIG,
+                SystemPage.CONFIG,
 
-		SystemPage.LOGIN
+                SystemPage.LOGIN
 
-		};
-	}
+        };
+    }
 
-	public Page[] getVisiblePages() {
-		return new Page[] {
+    public Page[] getVisiblePages() {
+        return new Page[]{
 
-		ReportPage.WEB,
+                ReportPage.WEB,
 
-		ReportPage.APP,
+                ReportPage.APP,
 
-		ReportPage.METRIC,
+                ReportPage.METRIC,
 
-		ReportPage.TRANSACTION,
+                ReportPage.TRANSACTION,
 
-		ReportPage.EVENT,
+                ReportPage.EVENT,
 
-		ReportPage.PROBLEM,
+                ReportPage.PROBLEM,
 
-		ReportPage.HEARTBEAT,
+                ReportPage.HEARTBEAT,
 
-		ReportPage.CROSS,
+                ReportPage.CROSS,
 
-		ReportPage.CACHE,
+                ReportPage.CACHE,
 
-		ReportPage.DEPENDENCY,
+                ReportPage.MATRIX,
 
-		ReportPage.STATE,
+                ReportPage.DEPENDENCY,
 
-		ReportPage.LOGVIEW
+                ReportPage.STATE,
 
-		};
-	}
+                ReportPage.LOGVIEW
+
+        };
+    }
 }

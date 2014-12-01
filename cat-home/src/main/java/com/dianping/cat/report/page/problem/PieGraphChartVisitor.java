@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.hsqldb.lib.StringUtil;
-
 import com.dianping.cat.consumer.problem.model.entity.Duration;
 import com.dianping.cat.consumer.problem.model.entity.Entry;
 import com.dianping.cat.consumer.problem.model.entity.JavaThread;
@@ -16,6 +14,7 @@ import com.dianping.cat.consumer.problem.model.entity.Segment;
 import com.dianping.cat.consumer.problem.model.transform.BaseVisitor;
 import com.dianping.cat.report.page.PieChart;
 import com.dianping.cat.report.page.PieChart.Item;
+import org.apache.commons.lang.StringUtils;
 
 public class PieGraphChartVisitor extends BaseVisitor {
 
@@ -65,7 +64,7 @@ public class PieGraphChartVisitor extends BaseVisitor {
 		String name = entry.getStatus();
 
 		if (type.equals(m_type)) {
-			if (StringUtil.isEmpty(m_status) || name.equals(m_status)) {
+			if (StringUtils.isEmpty(m_status) || name.equals(m_status)) {
 				super.visitEntry(entry);
 			}
 		}

@@ -2,7 +2,7 @@ package com.dianping.cat.system.page.config;
 
 import java.util.List;
 
-import org.hsqldb.lib.StringUtil;
+import org.apache.commons.lang.StringUtils;
 import org.unidal.web.mvc.ActionContext;
 import org.unidal.web.mvc.ActionPayload;
 import org.unidal.web.mvc.payload.annotation.FieldMeta;
@@ -205,10 +205,10 @@ public class Payload implements ActionPayload<SystemPage, Action> {
 	public MetricItemConfig getMetricItemConfig() {
 		List<Tag> tags = m_metricItemConfig.getTags();
 
-		if (!StringUtil.isEmpty(m_countTags)) {
+		if (!StringUtils.isEmpty(m_countTags)) {
 			for (String tag : m_countTags.split(",")) {
 				tag = tag.trim();
-				if (!StringUtil.isEmpty(tag)) {
+				if (!StringUtils.isEmpty(tag)) {
 					Tag countTag = new Tag();
 
 					countTag.setName(tag).setType("COUNT");
@@ -217,10 +217,10 @@ public class Payload implements ActionPayload<SystemPage, Action> {
 			}
 		}
 
-		if (!StringUtil.isEmpty(m_sumTags)) {
+		if (!StringUtils.isEmpty(m_sumTags)) {
 			for (String tag : m_sumTags.split(",")) {
 				tag = tag.trim();
-				if (!StringUtil.isEmpty(tag)) {
+				if (!StringUtils.isEmpty(tag)) {
 					Tag sumTag = new Tag();
 
 					sumTag.setName(tag).setType("SUM");
@@ -229,10 +229,10 @@ public class Payload implements ActionPayload<SystemPage, Action> {
 			}
 		}
 
-		if (!StringUtil.isEmpty(m_avgTags)) {
+		if (!StringUtils.isEmpty(m_avgTags)) {
 			for (String tag : m_avgTags.split(",")) {
 				tag = tag.trim();
-				if (!StringUtil.isEmpty(tag)) {
+				if (!StringUtils.isEmpty(tag)) {
 					Tag avgTag = new Tag();
 
 					avgTag.setName(tag).setType("AVG");

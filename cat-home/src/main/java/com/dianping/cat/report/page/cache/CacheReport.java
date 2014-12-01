@@ -9,13 +9,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.hsqldb.lib.StringUtil;
-
 import com.dianping.cat.consumer.event.model.entity.EventName;
 import com.dianping.cat.consumer.event.model.entity.EventType;
 import com.dianping.cat.consumer.transaction.model.entity.TransactionName;
 import com.dianping.cat.consumer.transaction.model.entity.TransactionType;
 import com.dianping.cat.report.page.JsonBuilder;
+import org.apache.commons.lang.StringUtils;
 
 public class CacheReport {
 	private static final String ALL = "ALL";
@@ -170,7 +169,7 @@ public class CacheReport {
 			m_name.setAvg((double) m_name.getSum() / m_name.getTotalCount());
 			m_name.setTps(m_name.getTps() + transactionName.getTps());
 
-			if (!StringUtil.isEmpty(method)) {
+			if (!StringUtils.isEmpty(method)) {
 				if ("get".equals(method)) {
 					m_get += transactionTotalCount;
 					m_missed = m_missed + eventName.getTotalCount();

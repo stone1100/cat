@@ -4,16 +4,15 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.hsqldb.lib.StringUtil;
-
 import com.dianping.cat.home.highload.entity.HighloadReport;
 import com.dianping.cat.home.highload.entity.Name;
 import com.dianping.cat.home.highload.entity.Type;
+import org.apache.commons.lang.StringUtils;
 
 public class DisplayTypes {
 
 	public HighloadReport display(String sortBy, HighloadReport report) {
-		if (!StringUtil.isEmpty(sortBy)) {
+		if (!StringUtils.isEmpty(sortBy)) {
 			for (Type type : report.getTypes()) {
 				List<Name> names = type.getNames();
 				Collections.sort(names, new NameComparator(sortBy));

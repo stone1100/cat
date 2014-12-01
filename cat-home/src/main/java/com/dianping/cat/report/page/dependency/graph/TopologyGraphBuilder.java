@@ -7,8 +7,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.hsqldb.lib.StringUtil;
-
 import com.dianping.cat.consumer.dependency.model.entity.Dependency;
 import com.dianping.cat.consumer.dependency.model.entity.DependencyReport;
 import com.dianping.cat.consumer.dependency.model.entity.Index;
@@ -18,6 +16,7 @@ import com.dianping.cat.helper.TimeHelper;
 import com.dianping.cat.home.dependency.graph.entity.TopologyEdge;
 import com.dianping.cat.home.dependency.graph.entity.TopologyGraph;
 import com.dianping.cat.home.dependency.graph.entity.TopologyNode;
+import org.apache.commons.lang.StringUtils;
 
 public class TopologyGraphBuilder extends BaseVisitor {
 
@@ -81,9 +80,9 @@ public class TopologyGraphBuilder extends BaseVisitor {
 	}
 
 	public String mergeDes(String old, String des) {
-		if (StringUtil.isEmpty(old)) {
+		if (StringUtils.isEmpty(old)) {
 			return des;
-		} else if (StringUtil.isEmpty(des)) {
+		} else if (StringUtils.isEmpty(des)) {
 			return old;
 		} else {
 			return old + des;

@@ -13,7 +13,7 @@ import java.util.Set;
 
 import javax.servlet.ServletException;
 
-import org.hsqldb.lib.StringUtil;
+import org.apache.commons.lang.StringUtils;
 import org.unidal.lookup.annotation.Inject;
 import org.unidal.tuple.Pair;
 import org.unidal.web.mvc.PageHandler;
@@ -271,7 +271,7 @@ public class Handler implements PageHandler<Context> {
 		int minute = 0;
 		String min = payload.getMinute();
 
-		if (StringUtil.isEmpty(min)) {
+		if (StringUtils.isEmpty(min)) {
 			long current = System.currentTimeMillis() / 1000 / 60;
 			minute = (int) (current % (60));
 		} else {

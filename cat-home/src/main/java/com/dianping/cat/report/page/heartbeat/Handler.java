@@ -6,7 +6,7 @@ import java.util.Set;
 
 import javax.servlet.ServletException;
 
-import org.hsqldb.lib.StringUtil;
+import org.apache.commons.lang.StringUtils;
 import org.unidal.lookup.annotation.Inject;
 import org.unidal.web.mvc.PageHandler;
 import org.unidal.web.mvc.annotation.InboundActionMeta;
@@ -79,7 +79,7 @@ public class Handler implements PageHandler<Context> {
 		HeartbeatReport report = m_reportService.queryHeartbeatReport(payload.getDomain(), start, end);
 
 		model.setReport(report);
-		if (StringUtil.isEmpty(payload.getIpAddress()) || Constants.ALL.equals(payload.getIpAddress())) {
+		if (StringUtils.isEmpty(payload.getIpAddress()) || Constants.ALL.equals(payload.getIpAddress())) {
 			String ipAddress = getIpAddress(report, payload);
 
 			payload.setIpAddress(ipAddress);
@@ -152,7 +152,7 @@ public class Handler implements PageHandler<Context> {
 		String ipAddress = payload.getIpAddress();
 
 		model.setPage(ReportPage.HEARTBEAT);
-		if (StringUtil.isEmpty(ipAddress) || ipAddress.equals(Constants.ALL)) {
+		if (StringUtils.isEmpty(ipAddress) || ipAddress.equals(Constants.ALL)) {
 			model.setIpAddress(Constants.ALL);
 		} else {
 			payload.setRealIp(payload.getIpAddress());
